@@ -4,6 +4,9 @@
 # Build / distribution artifacts
 parish-site.zip
 
+# Netlify CLI build artifacts (functions bundle, cached config)
+.netlify/
+
 # Editor / tooling
 .claude/
 .vscode/

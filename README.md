@@ -12,8 +12,11 @@ on Netlify. Everything the browser serves lives in the [`site/`](site/) folder.
 - **Responsive, theme-consistent design** styled after the parent church's national brand
   (navy + gold, Montserrat/Poppins), with a mobile nav, sticky header, and reusable card
   and section components in a single [`stylesheet`](site/css/style.css).
-- **Self-updating sermon video** — the home page embeds the church's YouTube uploads
-  playlist, so the newest Sunday service always appears with no manual editing.
+- **Self-updating sermon videos** — the home page embeds the church's YouTube uploads
+  playlist, and the Watch page's "Recent Services" grid is populated at runtime from a
+  Netlify function that reads the channel's RSS feed server-side (working around the
+  feed's lack of CORS) and normalizes the messy ALL-CAPS titles. New services appear on
+  the site by themselves.
 - **Smart live-stream detection** ([`js/live-check.js`](site/js/live-check.js)) — instead
   of showing YouTube's jarring "video unavailable" box when the church is offline, the
   Watch page hides the player and polls the YouTube IFrame API every 60 seconds, revealing
@@ -52,9 +55,16 @@ Until that file exists, pages show a branded placeholder automatically — nothi
   which **always starts with the newest upload** — it updates itself every week with no editing.
 - The watch page's top player uses `embed/live_stream?channel=...`, which automatically shows
   the live service when streaming is on; otherwise it shows an offline notice.
-- The six "Recent Services" tiles on `watch.html` are hard-coded video IDs. Refresh them
-  occasionally: copy the 11-character ID from a YouTube video URL and swap it into the
-  `youtube.com/embed/<ID>` iframe and its caption.
+- The "Recent Services" tiles on `watch.html` update themselves. YouTube's RSS feed sends
+  no CORS headers, so the browser cannot read it directly; the Netlify function at
+  [`netlify/functions/recent-videos.mjs`](netlify/functions/recent-videos.mjs) fetches the
+  feed server-side, tidies the titles (the channel's raw titles are ALL CAPS with the
+  parish name and a date appended), and re-serves it as JSON from our own origin.
+  [`site/js/recent-videos.js`](site/js/recent-videos.js) renders it on page load.
+  **No manual editing is needed when a new service is posted.**
+- The tiles in `watch.html` are a fallback, shown if JavaScript is off or the function is
+  unreachable. They do not need routine updating, but refreshing them occasionally keeps
+  the no-JS experience current.
 
 ## Updating common things
 

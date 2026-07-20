@@ -78,30 +78,32 @@
       <h2>Recent Services</h2>
       <p class="sub">Missed a Sunday? Replay recent services below, or explore the full archive of 490+ videos on our channel.</p>
     </div>
-    <div class="grid grid-2">
+    <!-- Fallback tiles: replaced at runtime by js/recent-videos.js with the
+         channel's current uploads. Kept so the page works without JS. -->
+    <div class="grid grid-2" id="recent-grid">
       <div>
-        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/SqNZVi1QSDM" title="Thanksgiving Sunday — July 5, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <p class="video-note">Thanksgiving Sunday — July 5, 2026</p>
+        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/NnC4iVXY0ZQ" title="Everlasting Peace With Christ &mdash; July 19, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <p class="video-note">Everlasting Peace With Christ &mdash; July 19, 2026</p>
       </div>
       <div>
-        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/RhX5ToPYTOI" title="Sunday Service — June 28, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <p class="video-note">Sunday Service — June 28, 2026</p>
+        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/_rH2tmOBrg4" title="Hosanna Praise And Worship &mdash; July 12, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <p class="video-note">Hosanna Praise And Worship &mdash; July 12, 2026</p>
       </div>
       <div>
-        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/2ncvpdzKJG0" title="Father's Day Service — June 21, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <p class="video-note">Father's Day Service — June 21, 2026</p>
+        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/SqNZVi1QSDM" title="Thanksgiving Sunday &mdash; July 5, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <p class="video-note">Thanksgiving Sunday &mdash; July 5, 2026</p>
       </div>
       <div>
-        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/0-ATDm4st2I" title="Hosanna Praise & Worship — June 14, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <p class="video-note">Hosanna Praise & Worship — June 14, 2026</p>
+        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/eqJkEViG71Y" title="Sunday Service &mdash; June 29, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <p class="video-note">Sunday Service &mdash; June 29, 2026</p>
       </div>
       <div>
-        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/IfXgWZmkNFs" title="Sunday Service — June 7, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <p class="video-note">Sunday Service — June 7, 2026</p>
+        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/RhX5ToPYTOI" title="Sunday Service &mdash; June 29, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <p class="video-note">Sunday Service &mdash; June 29, 2026</p>
       </div>
       <div>
-        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/VmVj6yvYKs8" title="Sunday Service — May 31, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <p class="video-note">Sunday Service — May 31, 2026</p>
+        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube.com/embed/2ncvpdzKJG0" title="Fathers Day &mdash; June 21, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <p class="video-note">Fathers Day &mdash; June 21, 2026</p>
       </div>
     </div>
     <p class="video-note" style="margin-top:2rem"><a class="btn btn-navy" href="https://www.youtube.com/@rccgsolutioncenterforallna510/featured" target="_blank" rel="noopener">Visit RCCG SCONA TV on YouTube →</a></p>
@@ -169,5 +171,6 @@
 
 <script src="js/main.js"></script>
 <script src="js/live-check.js"></script>
+<script src="js/recent-videos.js"></script>
 </body>
 </html>

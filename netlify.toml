@@ -1,0 +1,7 @@
+# Netlify configuration for the parish site.
+# With this file present, `netlify deploy --prod` publishes the right folders
+# without needing --dir / --functions flags.
+
+[build]
+  publish = "site"
+  functions = "netlify/functions"
